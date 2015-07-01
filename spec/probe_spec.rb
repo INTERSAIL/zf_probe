@@ -1,6 +1,6 @@
-require 'rails_helper'
+require 'spec_helper'
 
-describe 'Feeler' do
+describe 'Probe' do
   describe '#notify' do
     xit 'calls do_request with the given parameters'
     # will use event data as parameter
