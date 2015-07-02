@@ -1,6 +1,6 @@
 module ZfProbe
   class TestProbe
-    include ::ZfProbe
+    include ZfProbe
 
     MONITOR_URL = "http://iMac-di-Jacopo.sail.local:3000/api/notifications"
 

@@ -2,6 +2,7 @@ require 'spec_helper'
 
 module ZfProbe
   describe HTTP do
+
     class HTTPStub
       include HTTP
     end

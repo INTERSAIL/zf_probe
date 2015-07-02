@@ -1,8 +1,8 @@
-require "zf_probe/version"
+require 'active_support/concern'
 require "zf_probe/http"
 require "zf_probe/test_probe"
-require 'active_support/concern'
 require 'net/http'
+require "zf_probe/version"
 
 module ZfProbe
   extend ActiveSupport::Concern
