@@ -19,6 +19,7 @@ describe ZfProbe, type: :module do
         expect(ZfProbe::CUSTOMER_ID).to eq("2")
         expect(ZfProbe::PRODUCT_ID).to eq("3")
         expect(ZfProbe::SERVICE_ID).to eq("4")
+        expect(ZfProbe::MONITOR_URL).to eq("http://iMac-di-Jacopo.sail.local:3000/api/notifications")
     end
   end
 
@@ -43,6 +44,8 @@ describe ZfProbe, type: :module do
   end
 
   describe '#after_notification' do
-    it 'is called after #notification with the do_request response data'
+    xit 'is called after #notification with the do_request response data' do
+      #@jtodoIMP go from here
+    end
   end
 end

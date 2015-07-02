@@ -12,6 +12,7 @@ module ZfProbe
   CUSTOMER_ID = "2"
   PRODUCT_ID = "3"
   SERVICE_ID = "4"
+  MONITOR_URL = "http://iMac-di-Jacopo.sail.local:3000/api/notifications"
 
   # == Monitor notifications
   # Event parameter needs to match the following structure:
