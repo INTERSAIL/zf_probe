@@ -38,14 +38,23 @@ describe ZfProbe, type: :module do
           }
       }
       expect(subject).to receive(:do_request).with(req_params) { res }
+      allow(subject).to receive(:after_notification)
 
       subject.notify({})
     end
   end
 
   describe '#after_notification' do
-    xit 'is called after #notification with the do_request response data' do
-      #@jtodoIMP go from here
+    let(:data) { {fake: "json_data" } }
+    it 'is called after #notification with the do_request response data' do
+      allow(subject).to receive(:do_request) {data}
+      expect(subject).to receive(:after_notification).with(data)
+
+      subject.notify({})
+    end
+
+    it 'raises_error by default' do
+      expect{subject.send("after_notification", {})}.to raise_error(StandardError, "You need to implement this method in your class.")
     end
   end
 end

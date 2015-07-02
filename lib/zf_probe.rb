@@ -29,10 +29,11 @@ module ZfProbe
   # with this method the probe will send a notification to the
   # monitor. the response of the monitor is handled with the #after_notification method
   def notify(event_data)
-    do_request(build_req(event_data))
+    after_notification(do_request(build_req(event_data)))
   end
 
-  def after_notification(resp)
+  def after_notification(res)
+    raise StandardError, "You need to implement this method in your class."
   end
 
   private
