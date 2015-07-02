@@ -26,9 +26,12 @@ describe ZfProbe, type: :module do
   describe '#notify' do
     let(:res) { {} }
     let(:time_str) { "2015-07-02 12:28:46 +0200" }
+    let(:random_id) { "e34bbe64-25be-4cf5-91a1-77883e40147e" }
     it 'calls do_request with the given parameters' do
-      expect(Time).to receive_message_chain(:now,:to_s) { time_str }
+      allow(Time).to receive_message_chain(:now,:to_s) { time_str }
+      allow(SecureRandom).to receive(:uuid) { random_id }
       req_params = {
+          id: random_id,
           sc_id: ZfProbe::SC_ID,
           customer_id: ZfProbe::CUSTOMER_ID,
           product_id: ZfProbe::PRODUCT_ID,

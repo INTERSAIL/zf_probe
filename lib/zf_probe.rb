@@ -38,7 +38,8 @@ module ZfProbe
 
   private
   def build_req(event_data)
-    config.merge({event: build_event_data(event_data)})
+    config.merge({id: SecureRandom.uuid})
+    .merge({event: build_event_data(event_data)})
   end
 
   def build_event_data(event_data)
