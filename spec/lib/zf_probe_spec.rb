@@ -11,6 +11,8 @@ describe ZfProbe, type: :module do
 
   subject { ProbeStub.new }
 
+  it { is_expected.to includes(ZfProbe::HTTP)}
+
   describe 'configuration' do
     it 'has monitor configuration params' do
         expect(ZfProbe::SC_ID).to eq("1")
@@ -37,13 +39,6 @@ describe ZfProbe, type: :module do
       expect(subject).to receive(:do_request).with(req_params) { res }
 
       subject.notify({})
-    end
-    # will use event data as parameter
-  end
-
-  describe '#do_request' do
-    # put this into another mixin for http requests
-      xit 'makes the http request to the monitor' do
     end
   end
 

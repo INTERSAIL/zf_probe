@@ -1,8 +1,11 @@
 require "zf_probe/version"
+require "zf_probe/http"
 require 'active_support/concern'
+require 'net/http'
 
 module ZfProbe
   extend ActiveSupport::Concern
+  include HTTP
 
   # Monitor configuration Data
   SC_ID = "1"
