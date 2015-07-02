@@ -2,7 +2,8 @@ require 'spec_helper'
 
 module ZfProbe
   describe TestProbe do
-    it { is_expected.to includes(ZfProbe)}
+    it { is_expected.to includes(ZfProbe) }
+    it { is_expected.to includes(ZfProbe::HTTP) }
 
     describe '#after_notification' do
       let(:data) { {fake: "fake data"} }

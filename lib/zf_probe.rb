@@ -1,7 +1,6 @@
 require 'active_support/concern'
-require "zf_probe/http"
-require "zf_probe/test_probe"
 require 'net/http'
+require "zf_probe/http"
 require "zf_probe/version"
 
 module ZfProbe
@@ -56,3 +55,5 @@ module ZfProbe
     }
   end
 end
+
+require "zf_probe/test_probe"

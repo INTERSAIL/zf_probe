@@ -11,7 +11,7 @@ describe ZfProbe, type: :module do
 
   subject { ProbeStub.new }
 
-  it { is_expected.to includes(ZfProbe::HTTP)}
+  it { is_expected.to includes(ZfProbe::HTTP) }
 
   describe 'configuration' do
     it 'has monitor configuration params' do

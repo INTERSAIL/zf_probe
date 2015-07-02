@@ -1,5 +1,3 @@
-require 'active_support/concern'
-
 module ZfProbe
   module HTTP
   extend ActiveSupport::Concern
