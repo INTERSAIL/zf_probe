@@ -2,6 +2,7 @@ module ZfProbe
   module Configuration
     extend ActiveSupport::Concern
 
+    # You need to override this
     def base_config
       {
           sc_id: "1",
@@ -11,6 +12,7 @@ module ZfProbe
       }
     end
 
+    # You need to override this
     def monitor_url
       "http://the-monitor-url.com:3000"
     end
