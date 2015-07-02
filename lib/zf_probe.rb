@@ -1,18 +1,16 @@
 require 'active_support/concern'
+require 'active_support/core_ext/class/attribute.rb'
 require 'net/http'
+require 'uri'
+require "zf_probe/configuration"
 require "zf_probe/http"
 require "zf_probe/version"
 
 module ZfProbe
   extend ActiveSupport::Concern
-  include HTTP
 
-  # Monitor configuration Data
-  SC_ID = "1"
-  CUSTOMER_ID = "2"
-  PRODUCT_ID = "3"
-  SERVICE_ID = "4"
-  MONITOR_URL = "http://the-monitor-url:port"
+  include Configuration
+  include HTTP
 
   # == Monitor notifications
   # Event parameter needs to match the following structure:
@@ -38,21 +36,12 @@ module ZfProbe
 
   private
   def build_req(event_data)
-    config.merge({id: SecureRandom.uuid})
+    base_config.merge({id: SecureRandom.uuid})
     .merge({event: build_event_data(event_data)})
   end
 
   def build_event_data(event_data)
     event_data.merge({timestamp: Time.now.to_s})
-  end
-
-  def config
-    {
-        sc_id: SC_ID,
-        customer_id: CUSTOMER_ID,
-        product_id: PRODUCT_ID,
-        service_id: SERVICE_ID
-    }
   end
 end
 

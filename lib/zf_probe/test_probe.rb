@@ -2,7 +2,9 @@ module ZfProbe
   class TestProbe
     include ZfProbe
 
-    MONITOR_URL = "http://iMac-di-Jacopo.sail.local:3000/api/notifications"
+    def monitor_url
+      "http://iMac-di-Jacopo.sail.local:3000/api/notifications"
+    end
 
     def after_notification(res)
       res
