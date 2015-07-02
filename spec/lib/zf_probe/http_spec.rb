@@ -12,7 +12,7 @@ module ZfProbe
     describe '#do_request' do
       let(:data) { {fake_data: {fake: "data"}} }
       it 'makes the http request to the monitor' do
-        expect(Net::HTTP).to receive(:post).with(ZfProbe::MONITOR_URL, data)
+        expect(Net::HTTP).to receive(:post_form).with(ZfProbe::MONITOR_URL, data)
         subject.do_request(data)
       end
     end
