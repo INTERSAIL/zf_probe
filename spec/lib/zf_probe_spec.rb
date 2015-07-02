@@ -13,8 +13,6 @@ describe ZfProbe, type: :module do
 
   it { is_expected.to includes(ZfProbe::HTTP)}
 
-  it { is_expected.to respond_to(:do_request) }
-
   describe 'configuration' do
     it 'has monitor configuration params' do
         expect(ProbeStub::SC_ID).to eq("1")
