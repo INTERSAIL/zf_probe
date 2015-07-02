@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "bundler", "~> 1.9"
   spec.add_dependency "rake", "~> 10.0"
-  spec.add_dependency 'activesupport', '~> 4.2.3'
+  spec.add_dependency 'activesupport'
   #testing
   spec.add_development_dependency "byebug"
   spec.add_development_dependency "rspec"
