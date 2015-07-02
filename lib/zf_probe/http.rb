@@ -1,4 +1,5 @@
 require 'active_support/concern'
+
 module ZfProbe
   module HTTP
     def do_request(data)

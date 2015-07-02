@@ -1,5 +1,6 @@
 require "zf_probe/version"
 require "zf_probe/http"
+require "zf_probe/test_probe"
 require 'active_support/concern'
 require 'net/http'
 

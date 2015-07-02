@@ -15,11 +15,11 @@ describe ZfProbe, type: :module do
 
   describe 'configuration' do
     it 'has monitor configuration params' do
-        expect(ZfProbe::SC_ID).to eq("1")
-        expect(ZfProbe::CUSTOMER_ID).to eq("2")
-        expect(ZfProbe::PRODUCT_ID).to eq("3")
-        expect(ZfProbe::SERVICE_ID).to eq("4")
-        expect(ZfProbe::MONITOR_URL).to eq("http://the-monitor-url:port")
+        expect(ProbeStub::SC_ID).to eq("1")
+        expect(ProbeStub::CUSTOMER_ID).to eq("2")
+        expect(ProbeStub::PRODUCT_ID).to eq("3")
+        expect(ProbeStub::SERVICE_ID).to eq("4")
+        expect(ProbeStub::MONITOR_URL).to eq("http://the-monitor-url:port")
     end
   end
 
