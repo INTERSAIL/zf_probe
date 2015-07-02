@@ -1,7 +1,6 @@
 require 'active_support/concern'
 require 'active_support/core_ext/class/attribute.rb'
-require 'net/http'
-require 'uri'
+require 'httparty'
 require "zf_probe/configuration"
 require "zf_probe/http"
 require "zf_probe/version"
@@ -14,15 +13,18 @@ module ZfProbe
 
   # == Monitor notifications
   # Event parameter needs to match the following structure:
-  #      {
-  # (*)    event_type: 'type1',
-  # (*)    result: 'ERROR',
-  # (*)    message: 'Msg',
-  #        heartbeat: is_heartbeat,
-  # (*)    data: {
-  #          fake: 'data'
-  #        }
-  #      }
+  # {
+  #   notification:
+  #   {
+  # (*)   event_type: 'type1',
+  # (*)   result: 'ERROR',
+  # (*)   message: 'Msg',
+  #       heartbeat: is_heartbeat,
+  # (*)   data: {
+  #         fake: 'data'
+  #       }
+  #   }
+  # }
   # NOTE: fields marked with (*) are mandatory
   # with this method the probe will send a notification to the
   # monitor. the response of the monitor is handled with the #after_notification method
@@ -36,8 +38,9 @@ module ZfProbe
 
   private
   def build_req(event_data)
-    base_config.merge({id: SecureRandom.uuid})
+    {notification: base_config.merge({id: SecureRandom.uuid})
     .merge({event: build_event_data(event_data)})
+    }
   end
 
   def build_event_data(event_data)

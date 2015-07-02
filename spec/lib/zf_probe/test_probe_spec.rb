@@ -10,7 +10,7 @@ module ZfProbe
 
     describe '#do_request' do
       it 'uses his monitor_url' do
-        expect(Net::HTTP).to receive(:post_form).with(URI(subject.monitor_url), {})
+        expect(HTTParty).to receive(:post).with(subject.monitor_url, {})
         subject.do_request({})
       end
     end

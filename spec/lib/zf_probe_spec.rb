@@ -22,13 +22,15 @@ describe ZfProbe, type: :module do
       allow(Time).to receive_message_chain(:now, :to_s) { time_str }
       allow(SecureRandom).to receive(:uuid) { random_id }
       req_params = {
-          id: random_id,
-          sc_id: subject.base_config[:sc_id],
-          customer_id: subject.base_config[:customer_id],
-          product_id: subject.base_config[:product_id],
-          service_id: subject.base_config[:service_id],
-          event: {
-              timestamp: time_str
+          notification: {
+              id: random_id,
+              sc_id: subject.base_config[:sc_id],
+              customer_id: subject.base_config[:customer_id],
+              product_id: subject.base_config[:product_id],
+              service_id: subject.base_config[:service_id],
+              event: {
+                  timestamp: time_str
+              }
           }
       }
       expect(subject).to receive(:do_request).with(req_params) { res }

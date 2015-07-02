@@ -3,7 +3,7 @@ module ZfProbe
     extend ActiveSupport::Concern
 
     def do_request(data)
-      Net::HTTP.post_form(URI(monitor_url), data)
+      HTTParty.post(monitor_url, data)
     end
   end
 end

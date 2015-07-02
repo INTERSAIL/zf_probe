@@ -10,10 +10,10 @@ module ZfProbe
 
     describe 'configuration' do
       it 'has base configuration params' do
-        expect(subject.base_config[:sc_id]).to eq("1")
-        expect(subject.base_config[:customer_id]).to eq("2")
-        expect(subject.base_config[:product_id]).to eq("3")
-        expect(subject.base_config[:service_id]).to eq("4")
+        expect(subject.base_config[:sc_id]).to_not be_nil
+        expect(subject.base_config[:customer_id]).to_not be_nil
+        expect(subject.base_config[:product_id]).to_not be_nil
+        expect(subject.base_config[:service_id]).to_not be_nil
       end
 
       it 'has a monitor_url' do
