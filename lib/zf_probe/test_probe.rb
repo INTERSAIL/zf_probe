@@ -8,10 +8,10 @@ module ZfProbe
 
     def base_config
       {
-          sc_id: "17ef0998-3864-4037-b694-dd2c6e9a9a99",
-          customer_id: "312f3715-a885-4799-a839-b8d34aa69b76",
-          product_id: "a74b29fd-cd1e-47dc-a918-473c3fe27c0b",
-          service_id: "23cd9b32-25e5-4b9f-8423-6848ede55950",
+          sc_id: "cf14c0cc-f754-46eb-8139-0996b0fadfcf",
+          service_id: "57b5c2e9-0986-4caa-b0bc-dd2fd812257b",
+          product_id: "92c403b2-fdff-4184-9f3e-ad16a2d89113",
+          customer_id: "25eee987-4b49-4a6e-b7dc-326ae8bdc008"
       }
     end
 

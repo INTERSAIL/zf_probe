@@ -1,6 +1,7 @@
 require 'active_support/concern'
 require 'active_support/core_ext/class/attribute.rb'
 require 'httparty'
+require 'erb'
 require "zf_probe/configuration"
 require "zf_probe/http"
 require "zf_probe/version"
