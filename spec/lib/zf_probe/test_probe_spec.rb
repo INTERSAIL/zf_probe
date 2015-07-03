@@ -17,8 +17,13 @@ module ZfProbe
 
     describe '#after_notification' do
       let(:data) { {fake: "fake data"} }
+      let(:code) { 200 }
+      let(:res) { double(to_h: data, code: code) }
       it 'returns monitor result ' do
-        expect(subject.after_notification(data)).to eq(data)
+        expect(subject.after_notification(res).fetch(:data)).to eq(data)
+      end
+      it 'returns monitor response code' do
+        expect(subject.after_notification(res).fetch(:code)).to eq(code)
       end
     end
   end

@@ -5,10 +5,10 @@ module ZfProbe
     # You need to override this
     def base_config
       {
-          sc_id: "befc35e9-aef5-4efc-a898-2a4db75876d2",
-          customer_id: "d680708d-5c82-4adf-b84e-8d93811684dd",
-          product_id: "a9b0ad3a-3d7d-45f2-987e-040fd022a569",
-          service_id: "24a2936e-b687-4b4e-8d20-0090436b6cda",
+          sc_id: "17ef0998-3864-4037-b694-dd2c6e9a9a99",
+          customer_id: "312f3715-a885-4799-a839-b8d34aa69b76",
+          product_id: "a74b29fd-cd1e-47dc-a918-473c3fe27c0b",
+          service_id: "23cd9b32-25e5-4b9f-8423-6848ede55950",
       }
     end
 
